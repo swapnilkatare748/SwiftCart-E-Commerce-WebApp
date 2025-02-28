@@ -4,7 +4,7 @@ import styles from "./HeroHome.module.css";
 function HeroHome() {
   return (
     <div className={styles.HeroHome}>
-       <h1>hello hero</h1>
+       <h1>hello hero vercal </h1>
     </div>
   )
 }
