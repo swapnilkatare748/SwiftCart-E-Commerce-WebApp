@@ -1,0 +1,22 @@
+.CartSection{
+    cursor: pointer;
+}
+
+.CartSection {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cartCount {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    color:  var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 5px 8px;
+    min-width: 20px;
+    text-align: center;
+  }
+  

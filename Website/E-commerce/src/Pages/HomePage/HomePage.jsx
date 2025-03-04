@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import styles from "./HomePage.module.css";
-import HeroHome from '../../Components/HomeComponents/HeroHome/HeroHome';
+import HeroHome from "../../Components/HomeComponents/HeroHome/HeroHome";
+import FligntlmageBanner from "../../Components/HomeComponents/FliteBanner/FilterBanner.jsx";
+import ProductList from "../../Components/HomeComponents/ProductList/ProductList.jsx";
+import {MobileProducts, LaptopProducts} from "../../Files/Data.js"; // Ensure this file contains product data
+import { images } from "../../assets/image.js";
+import OfferBanner from "../../Components/HomeComponents/OffersBannerContainer/OfferBanner.jsx";
 
 function HomePage() {
+
   return (
     <div className={styles.HomePage}>
-      <HeroHome/>
-      <h1> hello i am from home page </h1>
+      <HeroHome />
+       <OfferBanner images={images}/>
+      <ProductList products={MobileProducts} />
+      <FligntlmageBanner />
+      <ProductList products={LaptopProducts} />
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;

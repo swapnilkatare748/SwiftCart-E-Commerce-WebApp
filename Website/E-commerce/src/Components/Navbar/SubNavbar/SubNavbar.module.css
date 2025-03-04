@@ -1,0 +1,32 @@
+.SubNavbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    background-color: var(--subnav);}
+
+.primaryNavSection{
+    display: flex;
+    padding: 7px 20px;
+    width: 60%;
+    justify-content: space-between;
+}
+.navbarLink{
+    color: var(--color-white);
+
+}
+.OfferSection{
+    width: 30%;
+    /* background :var(--gradient-1); */
+    width: 10%;
+    
+}
+
+@media (max-width:700px){
+    .SubNavbar{
+        display: none;
+    }
+}
+
+  

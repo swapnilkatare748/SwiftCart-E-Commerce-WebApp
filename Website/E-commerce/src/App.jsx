@@ -4,6 +4,12 @@ import { BrowserRouter , Routes, Route, Link } from 'react-router-dom';
 import HomePage from "./Pages/HomePage/HomePage";
 import Error from './Pages/ErrorPage/Error';
 import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import ProductDetailPage from './Pages/ProductDetailPage/ProductDetailPage';
+import CartPage from './Pages/CartPage/CartPage';
+import { CartProvider } from "./Context/CartContext.jsx"; // Import the CartProvider
+
+
 
 // const ProtectedRoute = ({ children, allowedRoles }) => {
 //   const isLoggedIn = localStorage.getItem("loggedIn") === "true";
@@ -24,12 +30,14 @@ import Navbar from "./Components/Navbar/Navbar";
 function App() {
   return (
     <div className='App'>
+      <CartProvider>
        <Navbar/>
        <Routes>
         
           <Route path='/' element={<HomePage/>}/>
           <Route path='*' element={<Error/>}/>
-
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path='/cart' element={<CartPage/>}/>
           {/*        
              <Route
           path="/exam"
@@ -49,6 +57,8 @@ function App() {
 
 
        </Routes>
+       <Footer/>
+       </CartProvider>
     </div>
   )
 }

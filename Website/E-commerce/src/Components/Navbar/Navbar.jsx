@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import ThemeToggel from "../ThemeToggle/ThemeToggel.jsx";
-import APP_CONFIG from "../../Files/AppData.jsx"
+import APP_CONFIG from "../../Files/AppData.jsx";
+import PrimaryinputFields from "../InputFields/Primaryinputfields/PrimaryinputFields.jsx";
+import {FaAngleDown,IoLocationOutline, GiShoppingCart, CgProfile } from "../../assets/Icons.js";
+import CartSection from "../CartSection/CartSection.jsx";
+import SubNavbar from "./SubNavbar/SubNavbar.jsx";
+
 
 function Navbar() {
   const [isNavbarActive, setIsNavbarActive] = useState(false);
@@ -65,10 +70,12 @@ function Navbar() {
   
 
   return (
+    <>
     <header
       className={`${styles.header} ${
         isNavbarActive ? styles.active : ""
       } ${isScrolled ? styles.scrolled : ""}`}
+      
     >
       <div className={styles.container}>
         <h1 className={styles.logo}>
@@ -79,31 +86,21 @@ function Navbar() {
 
         <div className={styles.navbarVisible}>
           <ul id="ul">
-            <li>
-              <Link to={"/"} className={styles.navbarLink}>
-                Home
-              </Link>
+            
+            <li className={styles.PrimaryinputFields}>
+              <PrimaryinputFields placeholder="Search for Product,Brands and More.."/>
             </li>
             <li>
-              <Link to={"/about"} className={styles.navbarLink}>
-                About
+              <Link  className={styles.navbarLink}>
+                Whats's new <FaAngleDown/>
               </Link>
-            </li>
+            </li> 
+
             <li>
-              <Link to={"/skills"} className={styles.navbarLink}>
-                Skills
+               <Link className={`${styles.navbarLink} flexCenter`}>
+                 <IoLocationOutline size={20}/> <small>Pune</small>
               </Link>
-            </li>
-            <li>
-              <Link to={"/portfolio"} className={styles.navbarLink}>
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link to={"/contact"} className={styles.navbarLink}>
-                Contact
-              </Link>
-            </li>
+              </li>
           </ul>
         </div>
 
@@ -111,9 +108,11 @@ function Navbar() {
           <select name="language" id="lang" className={styles.languageSelect}>
             <option value="en">En</option>
             <option value="ar">Ar</option>
-          </select>
-
-           <ThemeToggel/>
+          </select>          
+          <CartSection  />
+           <div className="UsrProfile">
+               <CgProfile size={30}/>
+           </div>
         </div>
 
         <button
@@ -165,6 +164,8 @@ function Navbar() {
         </nav>
       </div>
     </header>
+    <SubNavbar/>
+    </>
   );
 }
 
