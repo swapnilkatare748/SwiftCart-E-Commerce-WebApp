@@ -38,7 +38,6 @@ Rate Limiting & Input Validation – Prevents abuse and ensures data integrity
 🔹 DevOps & Deployment:
 
 Git & GitHub – Version control and collaboration
-Render / Vercel / Netlify / Heroku – For frontend and backend deployment
 Postman – API testing
 MongoDB Atlas – Cloud-hosted database solution
 Advanced/Optional Features 
